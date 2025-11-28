@@ -1,1 +1,5 @@
-Add-Content .gitignore "`n.env"
+.env
+.env.local
+node_modules/
+.DS_Store
+.netlify
