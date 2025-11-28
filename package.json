@@ -1,0 +1,19 @@
+{
+  "name": "rpg-fichas",
+  "version": "1.0.0",
+  "description": "Sistema de fichas VtM V5 - site estático com funções Netlify",
+  "main": "index.js",
+  "scripts": {
+    "dev": "netlify dev",
+    "start": "netlify dev"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "pg": "^8.10.0"
+  },
+  "devDependencies": {
+    "netlify-cli": "^12.0.0"
+  }
+}
