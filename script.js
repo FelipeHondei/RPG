@@ -210,21 +210,6 @@ function displaySavedData(charId) {
     table.innerHTML = html;
 }
 
-// Update save status message
-function showSaveStatus(message, isError) {
-    var status = document.getElementById('saveStatus');
-    status.textContent = message || '✓ Salvo!';
-    status.classList.add('show');
-    if (isError) {
-        status.classList.add('error');
-    } else {
-        status.classList.remove('error');
-    }
-    setTimeout(function () {
-        status.classList.remove('show');
-        status.classList.remove('error');
-    }, 3000);
-}
 
 window.addEventListener('DOMContentLoaded', async function() {
     await loadData();
