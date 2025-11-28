@@ -35,11 +35,16 @@ exports.handler = async function(event) {
   try {
     if (event.httpMethod === 'GET') {
       const qs = event.queryStringParameters || {};
+      // health check: /.netlify/functions/characters?health=1
+      if (qs.health) {
+        const res = await pool.query('SELECT 1 as ok');
+        return { statusCode: 200, headers, body: JSON.stringify({ ok: true }) };
+      }
       if (qs.char) {
-        const res = await pool.query('SELECT char_number, data FROM characters WHERE char_number = $1', [qs.char]);
+        const res = await pool.query('SELECT char_number, data FROM public.characters WHERE char_number = $1', [qs.char]);
         return { statusCode: 200, headers, body: JSON.stringify(res.rows[0] || null) };
       } else {
-        const res = await pool.query('SELECT char_number, data FROM characters ORDER BY char_number');
+        const res = await pool.query('SELECT char_number, data FROM public.characters ORDER BY char_number');
         return { statusCode: 200, headers, body: JSON.stringify(res.rows) };
       }
     }
@@ -53,8 +58,10 @@ exports.handler = async function(event) {
         return { statusCode: 400, headers, body: JSON.stringify({ error: 'char_number required and must be an integer' }) };
       }
 
+      // Log incoming body for debugging
+      console.log('Saving char', charNumber);
       const res = await pool.query(
-        `INSERT INTO characters (char_number, data) VALUES ($1, $2::jsonb)
+        `INSERT INTO public.characters (char_number, data) VALUES ($1, $2::jsonb)
          ON CONFLICT (char_number) DO UPDATE SET data = EXCLUDED.data, updated_at = now()
          RETURNING char_number, data;`,
         [charNumber, data]

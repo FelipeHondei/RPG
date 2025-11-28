@@ -54,11 +54,18 @@ async function storageSet(key, value) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ char_number: charNumber, data })
         });
+        const respText = await response.text();
+        let respJson = null;
+        try { respJson = respText ? JSON.parse(respText) : null; } catch (e) { respJson = null; }
         if (!response.ok) {
-            console.warn('Failed to save to API, using localStorage only');
+            const errMsg = (respJson && respJson.error) ? respJson.error : ('HTTP ' + response.status);
+            console.warn('Failed to save to API:', errMsg);
+            throw new Error(errMsg);
         }
+        return respJson || { ok: true };
     } catch (error) {
         console.warn('API error, data saved locally:', error);
+        throw error;
     }
 }
 
