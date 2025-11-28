@@ -18,6 +18,22 @@ function getPool() {
 }
 
 exports.handler = async function(event) {
+  // Log presence of DATABASE_URL (do not print the full secret)
+  try {
+    const dbUrl = process.env.DATABASE_URL;
+    console.log('DATABASE_URL defined:', !!dbUrl);
+    if (dbUrl) {
+      try {
+        const parsed = new URL(dbUrl);
+        console.log('DB host:', parsed.hostname + ':' + (parsed.port || '5432'));
+      } catch (e) {
+        // ignore parsing errors
+      }
+    }
+  } catch (e) {
+    // ignore
+  }
+
   // Basic CORS support
   const headers = {
     'Content-Type': 'application/json',
