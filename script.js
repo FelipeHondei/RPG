@@ -168,8 +168,70 @@ function toggleMenu() {
     document.getElementById('sidebar').classList.toggle('open');
 }
 
+// Save entire character sheet at once (called by explicit Save button)
+async function saveCharacterSheet(charId) {
+    try {
+        // Collect all form data for this character
+        var inputs = document.querySelectorAll('[data-char="' + charId + '"]');
+        inputs.forEach(function (input) {
+            characters[charId][input.dataset.field] = input.value;
+        });
+
+        // Save to storage
+        await storageSet('character_' + charId, JSON.stringify(characters[charId]));
+        showSaveStatus('Ficha ' + charId + ' salva com sucesso!');
+        
+        // Update saved data table
+        displaySavedData(charId);
+    } catch (error) {
+        console.error('Erro ao salvar ficha:', error);
+        showSaveStatus('Erro ao salvar ficha!', true);
+    }
+}
+
+// Display saved character data in a table format
+function displaySavedData(charId) {
+    var char = characters[charId];
+    var tableId = 'savedDataTable_' + charId;
+    var table = document.getElementById(tableId);
+    
+    if (!table) return;
+    
+    var html = '<table class="character-data-table"><tbody>';
+    var fieldsToShow = ['nome', 'conceito', 'cla', 'geracao', 'humanidade', 'fome', 'forca_vontade'];
+    
+    fieldsToShow.forEach(function (field) {
+        var label = field.replace(/_/g, ' ').toUpperCase();
+        var value = char[field] || '-';
+        html += '<tr><td><strong>' + label + ':</strong></td><td>' + value + '</td></tr>';
+    });
+    
+    html += '</tbody></table>';
+    table.innerHTML = html;
+}
+
+// Update save status message
+function showSaveStatus(message, isError) {
+    var status = document.getElementById('saveStatus');
+    status.textContent = message || '✓ Salvo!';
+    status.classList.add('show');
+    if (isError) {
+        status.classList.add('error');
+    } else {
+        status.classList.remove('error');
+    }
+    setTimeout(function () {
+        status.classList.remove('show');
+        status.classList.remove('error');
+    }, 3000);
+}
+
 window.addEventListener('DOMContentLoaded', async function() {
     await loadData();
+    // Render saved data tables for each character
+    for (var i = 1; i <= 5; i++) {
+        displaySavedData(i);
+    }
     // Garantir que a Visão Geral (aba 6) seja exibida ao abrir o app
     if (typeof switchTab === 'function') switchTab(6);
 });

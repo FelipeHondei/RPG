@@ -259,3 +259,65 @@
          grid-template-columns: 1fr;
      }
  }
+
+ /* Save Button and Data Table Styles */
+ .form-actions {
+     margin-top: 30px;
+     padding: 20px;
+     background: #2d2d2d;
+     border-radius: 8px;
+     display: flex;
+     gap: 10px;
+ }
+
+ .save-btn {
+     padding: 12px 24px;
+     background: #8b0000;
+     color: white;
+     border: none;
+     border-radius: 6px;
+     font-size: 1rem;
+     font-weight: bold;
+     cursor: pointer;
+     transition: all 0.3s ease;
+     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+ }
+
+ .save-btn:hover {
+     background: #b00000;
+     transform: translateY(-2px);
+     box-shadow: 0 6px 12px rgba(139, 0, 0, 0.4);
+ }
+
+ .save-btn:active {
+     transform: translateY(0);
+ }
+
+ .saved-data-section {
+     margin-top: 30px;
+     padding: 20px;
+     background: #2d2d2d;
+     border-radius: 8px;
+     border-left: 4px solid #8b0000;
+ }
+
+ .saved-data-section h3 {
+     color: #8b0000;
+     margin-bottom: 15px;
+     font-size: 1.2rem;
+ }
+
+ .character-data-table {
+     width: 100%;
+     border-collapse: collapse;
+     background: #1a1a1a;
+ }
+
+ .character-data-table td {
+     padding: 10px;
+     border-bottom: 1px solid #3a3a3a;
+ }
+
+ .character-data-table tr:hover {
+     background: #3a3a3a;
+ }
