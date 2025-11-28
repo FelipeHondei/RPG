@@ -1,12 +1,18 @@
 const { Pool } = require('pg');
 
 // Reuse global pool in serverless environment to avoid exhausting connections
+// Supabase requires SSL by default
 let pool;
 function getPool() {
   if (pool) return pool;
   pool = new Pool({
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.DB_SSL === 'false' ? false : { rejectUnauthorized: false }
+    ssl: {
+      rejectUnauthorized: false
+    },
+    max: 1, // Reduce connection pool size for serverless
+    idleTimeoutMillis: 30000,
+    connectionTimeoutMillis: 5000
   });
   return pool;
 }

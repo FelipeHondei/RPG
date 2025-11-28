@@ -6,28 +6,60 @@ var characters = {
     5: {}
 };
 
-// Storage helpers: prefer `window.storage` (if provided by host), fallback to localStorage
+// Storage helpers: prefer API /.netlify/functions/characters, fallback to localStorage
 async function storageGet(key) {
-    if (window.storage && typeof window.storage.get === 'function') {
-        try {
-            return await window.storage.get(key);
-        } catch (e) {
+    // key format: 'character_1', 'character_2', etc.
+    const match = key.match(/character_(\d+)/);
+    if (!match) {
+        return { value: localStorage.getItem(key) };
+    }
+
+    const charNumber = match[1];
+    try {
+        const response = await fetch(`/.netlify/functions/characters?char=${encodeURIComponent(charNumber)}`);
+        if (!response.ok) {
+            // Fallback to localStorage on API error
             return { value: localStorage.getItem(key) };
         }
+        const json = await response.json();
+        if (json && json.data) {
+            // Cache in localStorage for offline use
+            localStorage.setItem(key, JSON.stringify(json.data));
+            return { value: JSON.stringify(json.data) };
+        }
+        return { value: null };
+    } catch (error) {
+        console.warn('API error, using localStorage:', error);
+        return { value: localStorage.getItem(key) };
     }
-    return { value: localStorage.getItem(key) };
 }
 
 async function storageSet(key, value) {
-    if (window.storage && typeof window.storage.set === 'function') {
-        try {
-            return await window.storage.set(key, value);
-        } catch (e) {
-            localStorage.setItem(key, value);
-            return;
-        }
+    // key format: 'character_1', 'character_2', etc.
+    const match = key.match(/character_(\d+)/);
+    if (!match) {
+        localStorage.setItem(key, value);
+        return;
     }
+
+    const charNumber = parseInt(match[1], 10);
+    const data = JSON.parse(value);
+
+    // Always cache locally first
     localStorage.setItem(key, value);
+
+    try {
+        const response = await fetch('/.netlify/functions/characters', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ char_number: charNumber, data })
+        });
+        if (!response.ok) {
+            console.warn('Failed to save to API, using localStorage only');
+        }
+    } catch (error) {
+        console.warn('API error, data saved locally:', error);
+    }
 }
 
 async function loadData() {
