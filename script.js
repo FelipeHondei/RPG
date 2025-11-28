@@ -80,18 +80,23 @@ async function loadData() {
     }
 }
 
-async function saveField(input) {
+function saveField(input) {
+    // Only update local object when a field changes.
+    // Persisting and showing the "salvo" status happens only
+    // when the user clicks the explicit Save button (saveCharacterSheet).
     var charId = input.dataset.char;
     var field = input.dataset.field;
     var value = input.value;
 
+    if (!characters[charId]) characters[charId] = {};
     characters[charId][field] = value;
 
+    // Mark the form as having unsaved changes (optional visual cue)
     try {
-        await storageSet('character_' + charId, JSON.stringify(characters[charId]));
-        showSaveStatus();
-    } catch (error) {
-        console.error('Erro ao salvar:', error);
+        var btn = document.querySelector('[onclick="saveCharacterSheet(' + charId + ')"]');
+        if (btn) btn.classList.add('unsaved');
+    } catch (e) {
+        // ignore
     }
 }
 
