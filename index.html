@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sistema de Fichas VtM V5</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="container">
         <button class="menu-toggle" onclick="toggleMenu()">☰</button>
@@ -28,7 +30,7 @@
                     <h1>Ficha Prisma</h1>
                 </div>
 
-                                 <div class="form-row">
+                <div class="form-row">
                     <div class="form-group">
                         <label>Nome</label>
                         <input type="text" data-char="1" data-field="nome" onchange="saveField(this)">
@@ -78,15 +80,18 @@
                         <h3>Físicos</h3>
                         <div class="attribute-item">
                             <label>Força</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="forca" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="forca"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Destreza</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="destreza" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="destreza"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Vigor</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="vigor" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="vigor"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -94,15 +99,18 @@
                         <h3>Sociais</h3>
                         <div class="attribute-item">
                             <label>Carisma</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="carisma" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="carisma"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Manipulação</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="manipulacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="manipulacao"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Autocontrole</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="autocontrole" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="autocontrole"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -110,15 +118,18 @@
                         <h3>Mentais</h3>
                         <div class="attribute-item">
                             <label>Inteligência</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="inteligencia" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="inteligencia"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Raciocínio</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="raciocinio" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="raciocinio"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Determinação</label>
-                            <input type="number" min="0" max="5" data-char="1" data-field="determinacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="1" data-field="determinacao"
+                                onchange="saveField(this)">
                         </div>
                     </div>
                 </div>
@@ -129,115 +140,142 @@
                         <div>
                             <div class="skill-item">
                                 <label>Armas Brancas</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="armas_brancas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="armas_brancas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Armas de Fogo</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="armas_fogo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="armas_fogo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Atletismo</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="atletismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="atletismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Briga</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="briga" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="briga"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Condução</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="conducao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="conducao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Furtividade</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="furtividade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="furtividade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ladroagem</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="ladroagem" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="ladroagem"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ofícios</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="oficios" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="oficios"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Sobrevivência</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="sobrevivencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="sobrevivencia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Sagacidade</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="sagacidade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="sagacidade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Empatia com Animais</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="empatia_animais" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="empatia_animais"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Etiqueta</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="etiqueta" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="etiqueta"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Intimidação</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="intimidacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="intimidacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Liderança</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="lideranca" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="lideranca"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Manha</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="manha" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="manha"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Performance</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="performance" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="performance"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Persuasão</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="persuasao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="persuasao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Subterfúgio</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="subterfugio" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="subterfugio"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Erudição</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="erudicao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="erudicao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ciência</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="ciencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="ciencia"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Finanças</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="financas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="financas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Investigação</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="investigacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="investigacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Medicina</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="medicina" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="medicina"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ocultismo</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="ocultismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="ocultismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Percepção</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="percepcao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="percepcao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Política</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="politica" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="politica"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Tecnologia</label>
-                                <input type="number" min="0" max="5" data-char="1" data-field="tecnologia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="1" data-field="tecnologia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                     </div>
@@ -245,8 +283,21 @@
 
                 <div class="form-row">
                     <div class="form-group">
+                        <label>Dano agravado</label>
+                        <input type="number" min="0" max="10" data-char="1" data-field="dano_agravado"
+                            onchange="saveField(this)">
+                    </div>
+                    <div class="form-group">
+                        <label>Dano superficial</label>
+                        <input type="number" min="0" max="5" data-char="1" data-field="dano_superficial" onchange="saveField(this)">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
                         <label>Humanidade</label>
-                        <input type="number" min="0" max="10" data-char="1" data-field="humanidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="1" data-field="humanidade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Fome</label>
@@ -257,11 +308,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Força de Vontade</label>
-                        <input type="number" min="0" max="10" data-char="1" data-field="forca_vontade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="1" data-field="forca_vontade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Vitalidade</label>
-                        <input type="number" min="0" max="5" data-char="1" data-field="Vitalidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="1" data-field="Vitalidade"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -281,7 +334,7 @@
                     <label>História</label>
                     <textarea data-char="1" data-field="historia" onchange="saveField(this)"></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label>Equipamentos</label>
                     <textarea data-char="1" data-field="equipamentos" onchange="saveField(this)"></textarea>
@@ -302,7 +355,7 @@
                     <h1>Ficha Cora</h1>
                 </div>
 
-                 <div class="form-row">
+                <div class="form-row">
                     <div class="form-group">
                         <label>Nome</label>
                         <input type="text" data-char="2" data-field="nome" onchange="saveField(this)">
@@ -352,15 +405,18 @@
                         <h3>Físicos</h3>
                         <div class="attribute-item">
                             <label>Força</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="forca" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="forca"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Destreza</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="destreza" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="destreza"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Vigor</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="vigor" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="vigor"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -368,15 +424,18 @@
                         <h3>Sociais</h3>
                         <div class="attribute-item">
                             <label>Carisma</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="carisma" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="carisma"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Manipulação</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="manipulacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="manipulacao"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Autocontrole</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="autocontrole" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="autocontrole"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -384,15 +443,18 @@
                         <h3>Mentais</h3>
                         <div class="attribute-item">
                             <label>Inteligência</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="inteligencia" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="inteligencia"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Raciocínio</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="raciocinio" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="raciocinio"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Determinação</label>
-                            <input type="number" min="0" max="5" data-char="2" data-field="determinacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="2" data-field="determinacao"
+                                onchange="saveField(this)">
                         </div>
                     </div>
                 </div>
@@ -403,115 +465,142 @@
                         <div>
                             <div class="skill-item">
                                 <label>Armas Brancas</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="armas_brancas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="armas_brancas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Armas de Fogo</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="armas_fogo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="armas_fogo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Atletismo</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="atletismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="atletismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Briga</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="briga" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="briga"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Condução</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="conducao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="conducao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Furtividade</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="furtividade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="furtividade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ladroagem</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="ladroagem" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="ladroagem"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ofícios</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="oficios" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="oficios"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Sobrevivência</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="sobrevivencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="sobrevivencia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Sagacidade</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="sagacidade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="sagacidade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Empatia com Animais</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="empatia_animais" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="empatia_animais"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Etiqueta</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="etiqueta" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="etiqueta"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Intimidação</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="intimidacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="intimidacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Liderança</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="lideranca" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="lideranca"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Manha</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="manha" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="manha"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Performance</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="performance" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="performance"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Persuasão</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="persuasao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="persuasao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Subterfúgio</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="subterfugio" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="subterfugio"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Erudição</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="erudicao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="erudicao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ciência</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="ciencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="ciencia"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Finanças</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="financas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="financas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Investigação</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="investigacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="investigacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Medicina</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="medicina" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="medicina"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ocultismo</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="ocultismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="ocultismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Percepção</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="percepcao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="percepcao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Política</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="politica" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="politica"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Tecnologia</label>
-                                <input type="number" min="0" max="5" data-char="2" data-field="tecnologia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="2" data-field="tecnologia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                     </div>
@@ -519,8 +608,21 @@
 
                 <div class="form-row">
                     <div class="form-group">
+                        <label>Dano agravado</label>
+                        <input type="number" min="0" max="10" data-char="2" data-field="dano_agravado"
+                            onchange="saveField(this)">
+                    </div>
+                    <div class="form-group">
+                        <label>Dano superficial</label>
+                        <input type="number" min="0" max="5" data-char="2" data-field="dano_superficial" onchange="saveField(this)">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
                         <label>Humanidade</label>
-                        <input type="number" min="0" max="10" data-char="2" data-field="humanidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="2" data-field="humanidade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Fome</label>
@@ -531,11 +633,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Força de Vontade</label>
-                        <input type="number" min="0" max="10" data-char="2" data-field="forca_vontade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="2" data-field="forca_vontade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Vitalidade</label>
-                        <input type="number" min="0" max="5" data-char="2" data-field="Vitalidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="2" data-field="Vitalidade"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -555,7 +659,7 @@
                     <label>História</label>
                     <textarea data-char="2" data-field="historia" onchange="saveField(this)"></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label>Equipamentos</label>
                     <textarea data-char="2" data-field="equipamentos" onchange="saveField(this)"></textarea>
@@ -576,7 +680,7 @@
                     <h1>Ficha Lu chen</h1>
                 </div>
 
-                                  <div class="form-row">
+                <div class="form-row">
                     <div class="form-group">
                         <label>Nome</label>
                         <input type="text" data-char="3" data-field="nome" onchange="saveField(this)">
@@ -626,15 +730,18 @@
                         <h3>Físicos</h3>
                         <div class="attribute-item">
                             <label>Força</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="forca" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="forca"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Destreza</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="destreza" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="destreza"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Vigor</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="vigor" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="vigor"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -642,15 +749,18 @@
                         <h3>Sociais</h3>
                         <div class="attribute-item">
                             <label>Carisma</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="carisma" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="carisma"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Manipulação</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="manipulacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="manipulacao"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Autocontrole</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="autocontrole" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="autocontrole"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -658,15 +768,18 @@
                         <h3>Mentais</h3>
                         <div class="attribute-item">
                             <label>Inteligência</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="inteligencia" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="inteligencia"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Raciocínio</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="raciocinio" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="raciocinio"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Determinação</label>
-                            <input type="number" min="0" max="5" data-char="3" data-field="determinacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="3" data-field="determinacao"
+                                onchange="saveField(this)">
                         </div>
                     </div>
                 </div>
@@ -677,115 +790,142 @@
                         <div>
                             <div class="skill-item">
                                 <label>Armas Brancas</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="armas_brancas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="armas_brancas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Armas de Fogo</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="armas_fogo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="armas_fogo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Atletismo</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="atletismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="atletismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Briga</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="briga" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="briga"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Condução</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="conducao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="conducao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Furtividade</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="furtividade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="furtividade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ladroagem</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="ladroagem" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="ladroagem"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ofícios</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="oficios" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="oficios"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Sobrevivência</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="sobrevivencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="sobrevivencia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Sagacidade</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="sagacidade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="sagacidade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Empatia com Animais</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="empatia_animais" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="empatia_animais"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Etiqueta</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="etiqueta" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="etiqueta"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Intimidação</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="intimidacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="intimidacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Liderança</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="lideranca" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="lideranca"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Manha</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="manha" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="manha"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Performance</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="performance" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="performance"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Persuasão</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="persuasao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="persuasao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Subterfúgio</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="subterfugio" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="subterfugio"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Erudição</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="erudicao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="erudicao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ciência</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="ciencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="ciencia"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Finanças</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="financas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="financas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Investigação</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="investigacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="investigacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Medicina</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="medicina" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="medicina"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ocultismo</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="ocultismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="ocultismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Percepção</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="percepcao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="percepcao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Política</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="politica" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="politica"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Tecnologia</label>
-                                <input type="number" min="0" max="5" data-char="3" data-field="tecnologia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="3" data-field="tecnologia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                     </div>
@@ -793,8 +933,21 @@
 
                 <div class="form-row">
                     <div class="form-group">
+                        <label>Dano agravado</label>
+                        <input type="number" min="0" max="10" data-char="3" data-field="dano_agravado"
+                            onchange="saveField(this)">
+                    </div>
+                    <div class="form-group">
+                        <label>Dano superficial</label>
+                        <input type="number" min="0" max="5" data-char="3" data-field="dano_superficial" onchange="saveField(this)">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
                         <label>Humanidade</label>
-                        <input type="number" min="0" max="10" data-char="3" data-field="humanidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="3" data-field="humanidade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Fome</label>
@@ -805,11 +958,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Força de Vontade</label>
-                        <input type="number" min="0" max="10" data-char="3" data-field="forca_vontade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="3" data-field="forca_vontade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Vitalidade</label>
-                        <input type="number" min="0" max="5" data-char="3" data-field="Vitalidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="3" data-field="Vitalidade"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -829,7 +984,7 @@
                     <label>História</label>
                     <textarea data-char="3" data-field="historia" onchange="saveField(this)"></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label>Equipamentos</label>
                     <textarea data-char="3" data-field="equipamentos" onchange="saveField(this)"></textarea>
@@ -850,7 +1005,7 @@
                     <h1>Ficha Todi Tooka</h1>
                 </div>
 
-                                  <div class="form-row">
+                <div class="form-row">
                     <div class="form-group">
                         <label>Nome</label>
                         <input type="text" data-char="4" data-field="nome" onchange="saveField(this)">
@@ -900,15 +1055,18 @@
                         <h3>Físicos</h3>
                         <div class="attribute-item">
                             <label>Força</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="forca" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="forca"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Destreza</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="destreza" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="destreza"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Vigor</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="vigor" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="vigor"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -916,15 +1074,18 @@
                         <h3>Sociais</h3>
                         <div class="attribute-item">
                             <label>Carisma</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="carisma" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="carisma"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Manipulação</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="manipulacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="manipulacao"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Autocontrole</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="autocontrole" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="autocontrole"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -932,15 +1093,18 @@
                         <h3>Mentais</h3>
                         <div class="attribute-item">
                             <label>Inteligência</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="inteligencia" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="inteligencia"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Raciocínio</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="raciocinio" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="raciocinio"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Determinação</label>
-                            <input type="number" min="0" max="5" data-char="4" data-field="determinacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="4" data-field="determinacao"
+                                onchange="saveField(this)">
                         </div>
                     </div>
                 </div>
@@ -951,115 +1115,142 @@
                         <div>
                             <div class="skill-item">
                                 <label>Armas Brancas</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="armas_brancas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="armas_brancas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Armas de Fogo</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="armas_fogo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="armas_fogo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Atletismo</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="atletismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="atletismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Briga</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="briga" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="briga"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Condução</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="conducao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="conducao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Furtividade</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="furtividade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="furtividade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ladroagem</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="ladroagem" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="ladroagem"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ofícios</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="oficios" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="oficios"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Sobrevivência</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="sobrevivencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="sobrevivencia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Sagacidade</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="sagacidade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="sagacidade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Empatia com Animais</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="empatia_animais" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="empatia_animais"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Etiqueta</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="etiqueta" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="etiqueta"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Intimidação</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="intimidacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="intimidacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Liderança</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="lideranca" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="lideranca"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Manha</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="manha" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="manha"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Performance</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="performance" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="performance"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Persuasão</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="persuasao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="persuasao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Subterfúgio</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="subterfugio" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="subterfugio"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Erudição</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="erudicao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="erudicao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ciência</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="ciencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="ciencia"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Finanças</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="financas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="financas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Investigação</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="investigacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="investigacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Medicina</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="medicina" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="medicina"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ocultismo</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="ocultismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="ocultismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Percepção</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="percepcao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="percepcao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Política</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="politica" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="politica"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Tecnologia</label>
-                                <input type="number" min="0" max="5" data-char="4" data-field="tecnologia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="4" data-field="tecnologia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                     </div>
@@ -1067,8 +1258,21 @@
 
                 <div class="form-row">
                     <div class="form-group">
+                        <label>Dano agravado</label>
+                        <input type="number" min="0" max="10" data-char="4" data-field="dano_agravado"
+                            onchange="saveField(this)">
+                    </div>
+                    <div class="form-group">
+                        <label>Dano superficial</label>
+                        <input type="number" min="0" max="5" data-char="4" data-field="dano_superficial" onchange="saveField(this)">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
                         <label>Humanidade</label>
-                        <input type="number" min="0" max="10" data-char="4" data-field="humanidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="4" data-field="humanidade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Fome</label>
@@ -1079,11 +1283,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Força de Vontade</label>
-                        <input type="number" min="0" max="10" data-char="4" data-field="forca_vontade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="4" data-field="forca_vontade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Vitalidade</label>
-                        <input type="number" min="0" max="5" data-char="4" data-field="Vitalidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="4" data-field="Vitalidade"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -1103,7 +1309,7 @@
                     <label>História</label>
                     <textarea data-char="4" data-field="historia" onchange="saveField(this)"></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label>Equipamentos</label>
                     <textarea data-char="4" data-field="equipamentos" onchange="saveField(this)"></textarea>
@@ -1123,7 +1329,7 @@
                 <div class="form-header">
                     <h1>Ficha de Personagem 5</h1>
                 </div>
-                                      <div class="form-row">
+                <div class="form-row">
                     <div class="form-group">
                         <label>Nome</label>
                         <input type="text" data-char="5" data-field="nome" onchange="saveField(this)">
@@ -1173,15 +1379,18 @@
                         <h3>Físicos</h3>
                         <div class="attribute-item">
                             <label>Força</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="forca" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="forca"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Destreza</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="destreza" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="destreza"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Vigor</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="vigor" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="vigor"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -1189,15 +1398,18 @@
                         <h3>Sociais</h3>
                         <div class="attribute-item">
                             <label>Carisma</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="carisma" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="carisma"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Manipulação</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="manipulacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="manipulacao"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Autocontrole</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="autocontrole" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="autocontrole"
+                                onchange="saveField(this)">
                         </div>
                     </div>
 
@@ -1205,15 +1417,18 @@
                         <h3>Mentais</h3>
                         <div class="attribute-item">
                             <label>Inteligência</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="inteligencia" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="inteligencia"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Raciocínio</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="raciocinio" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="raciocinio"
+                                onchange="saveField(this)">
                         </div>
                         <div class="attribute-item">
                             <label>Determinação</label>
-                            <input type="number" min="0" max="5" data-char="5" data-field="determinacao" onchange="saveField(this)">
+                            <input type="number" min="0" max="5" data-char="5" data-field="determinacao"
+                                onchange="saveField(this)">
                         </div>
                     </div>
                 </div>
@@ -1224,115 +1439,142 @@
                         <div>
                             <div class="skill-item">
                                 <label>Armas Brancas</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="armas_brancas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="armas_brancas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Armas de Fogo</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="armas_fogo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="armas_fogo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Atletismo</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="atletismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="atletismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Briga</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="briga" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="briga"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Condução</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="conducao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="conducao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Furtividade</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="furtividade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="furtividade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ladroagem</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="ladroagem" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="ladroagem"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ofícios</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="oficios" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="oficios"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Sobrevivência</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="sobrevivencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="sobrevivencia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Sagacidade</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="sagacidade" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="sagacidade"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Empatia com Animais</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="empatia_animais" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="empatia_animais"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Etiqueta</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="etiqueta" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="etiqueta"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Intimidação</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="intimidacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="intimidacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Liderança</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="lideranca" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="lideranca"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Manha</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="manha" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="manha"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Performance</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="performance" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="performance"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Persuasão</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="persuasao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="persuasao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Subterfúgio</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="subterfugio" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="subterfugio"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                         <div>
                             <div class="skill-item">
                                 <label>Erudição</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="erudicao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="erudicao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ciência</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="ciencia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="ciencia"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Finanças</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="financas" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="financas"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Investigação</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="investigacao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="investigacao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Medicina</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="medicina" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="medicina"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Ocultismo</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="ocultismo" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="ocultismo"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Percepção</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="percepcao" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="percepcao"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Política</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="politica" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="politica"
+                                    onchange="saveField(this)">
                             </div>
                             <div class="skill-item">
                                 <label>Tecnologia</label>
-                                <input type="number" min="0" max="5" data-char="5" data-field="tecnologia" onchange="saveField(this)">
+                                <input type="number" min="0" max="5" data-char="5" data-field="tecnologia"
+                                    onchange="saveField(this)">
                             </div>
                         </div>
                     </div>
@@ -1340,8 +1582,21 @@
 
                 <div class="form-row">
                     <div class="form-group">
+                        <label>Dano agravado</label>
+                        <input type="number" min="0" max="10" data-char="5" data-field="dano_agravado"
+                            onchange="saveField(this)">
+                    </div>
+                    <div class="form-group">
+                        <label>Dano superficial</label>
+                        <input type="number" min="0" max="5" data-char="5" data-field="dano_superficial" onchange="saveField(this)">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
                         <label>Humanidade</label>
-                        <input type="number" min="0" max="10" data-char="5" data-field="humanidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="5" data-field="humanidade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Fome</label>
@@ -1352,11 +1607,13 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Força de Vontade</label>
-                        <input type="number" min="0" max="10" data-char="5" data-field="forca_vontade" onchange="saveField(this)">
+                        <input type="number" min="0" max="10" data-char="5" data-field="forca_vontade"
+                            onchange="saveField(this)">
                     </div>
                     <div class="form-group">
                         <label>Vitalidade</label>
-                        <input type="number" min="0" max="5" data-char="5" data-field="Vitalidade" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="5" data-field="Vitalidade"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -1376,7 +1633,7 @@
                     <label>História</label>
                     <textarea data-char="5" data-field="historia" onchange="saveField(this)"></textarea>
                 </div>
-                
+
                 <div class="form-group">
                     <label>Equipamentos</label>
                     <textarea data-char="5" data-field="equipamentos" onchange="saveField(this)"></textarea>
@@ -1403,4 +1660,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
