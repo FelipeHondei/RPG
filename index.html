@@ -14,7 +14,7 @@
             <h2>Fichas VtM V5</h2>
             <div class="menu-item" onclick="switchTab(1)">Prisma</div>
             <div class="menu-item" onclick="switchTab(2)">Cora</div>
-            <div class="menu-item" onclick="switchTab(3)">Lu chen</div>
+            <div class="menu-item" onclick="switchTab(3)">Lu Chen</div>
             <div class="menu-item" onclick="switchTab(4)">Todi Tooka</div>
             <div class="menu-item" onclick="switchTab(5)">Surpresa</div>
             <div class="menu-item active" onclick="switchTab(6)">Visão Geral</div>
@@ -513,11 +513,19 @@
                         <label>Fome</label>
                         <input type="number" min="0" max="5" data-char="2" data-field="fome" onchange="saveField(this)">
                     </div>
+                </div>
+
+                <div class="form-row">
                     <div class="form-group">
                         <label>Força de Vontade</label>
                         <input type="number" min="0" max="10" data-char="2" data-field="forca_vontade" onchange="saveField(this)">
                     </div>
+                    <div class="form-group">
+                        <label>Vitalidade</label>
+                        <input type="number" min="0" max="5" data-char="2" data-field="Vitalidade" onchange="saveField(this)">
+                    </div>
                 </div>
+
 
                 <div class="form-row">
                     <div class="form-group">
@@ -1314,6 +1322,11 @@
 
                 <div class="form-group">
                     <label>História</label>
+                    <textarea data-char="5" data-field="historia" onchange="saveField(this)"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Equipamentos</label>
                     <textarea data-char="5" data-field="historia" onchange="saveField(this)"></textarea>
                 </div>
 
