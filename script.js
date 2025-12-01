@@ -223,32 +223,48 @@ function showSaveStatus(message, isError) {
     }, 3000);
 }
 
-// Função para rolar dados
+// --- Abre o menu de seleção de dados ---
 function rollDice() {
-    var result = Math.floor(Math.random() * 10) + 1;
-    
-    var overlay = document.getElementById('diceOverlay');
-    var resultDiv = document.getElementById('diceResult');
-    var resultValue = document.getElementById('diceResultValue');
-    
+    document.getElementById("diceSelectorOverlay").classList.add("show");
+    document.getElementById("diceSelector").style.display = "block";
+}
+
+// --- Fecha o menu de seleção de dados ---
+function closeDiceSelector() {
+    document.getElementById("diceSelectorOverlay").classList.remove("show");
+    document.getElementById("diceSelector").style.display = "none";
+}
+
+// --- Função genérica para rolar qualquer dado ---
+function rollSelectedDice(sides) {
+    closeDiceSelector(); // Fecha o seletor de dados
+
+    const result = Math.floor(Math.random() * sides) + 1;
+
+    const overlay = document.getElementById('diceOverlay');
+    const resultDiv = document.getElementById('diceResult');
+    const resultValue = document.getElementById('diceResultValue');
+
     resultValue.textContent = result;
     overlay.classList.add('show');
     resultDiv.classList.add('show');
-    
-    // Animação do dado girando
+
     resultValue.style.animation = 'none';
-    setTimeout(function() {
+    setTimeout(() => {
         resultValue.style.animation = 'diceRoll 0.5s ease';
     }, 10);
 }
 
+// --- Fecha o modal do resultado ---
 function closeDiceResult() {
-    var overlay = document.getElementById('diceOverlay');
-    var resultDiv = document.getElementById('diceResult');
-    
-    overlay.classList.remove('show');
-    resultDiv.classList.remove('show');
+    document.getElementById('diceOverlay').classList.remove('show');
+    document.getElementById('diceResult').classList.remove('show');
 }
+
+// Permite clicar fora do modal para fechar
+document.getElementById("diceSelectorOverlay").addEventListener("click", closeDiceSelector);
+document.getElementById("diceOverlay").addEventListener("click", closeDiceResult);
+
 
 window.addEventListener('DOMContentLoaded', async function() {
     await loadData();
@@ -256,10 +272,4 @@ window.addEventListener('DOMContentLoaded', async function() {
         displaySavedData(i);
     }
     if (typeof switchTab === 'function') switchTab(6);
-    
-    // Event listener para fechar o modal ao clicar no overlay
-    var overlay = document.getElementById('diceOverlay');
-    if (overlay) {
-        overlay.addEventListener('click', closeDiceResult);
-    }
 });

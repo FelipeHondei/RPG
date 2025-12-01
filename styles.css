@@ -457,3 +457,18 @@
      50% { transform: rotate(180deg) scale(1); }
      75% { transform: rotate(270deg) scale(1.2); }
  }
+ #diceSelector button {
+    padding: 12px 22px;
+    background: #8b0000;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+#diceSelector button:hover {
+    background: #b00000;
+    transform: scale(1.05);
+}

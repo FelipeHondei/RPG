@@ -1688,6 +1688,29 @@
         <button onclick="closeDiceResult()">Fechar</button>
     </div>
 
+    <div id="diceSelectorOverlay" class="dice-overlay"></div>
+    <div id="diceSelector" class="dice-result" style="display:none; min-width:350px;">
+        <h3>Selecione o dado</h3>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:20px;">
+            <button onclick="rollSelectedDice(20)">D20</button>
+            <button onclick="rollSelectedDice(12)">D12</button>
+            <button onclick="rollSelectedDice(10)">D10</button>
+            <button onclick="rollSelectedDice(8)">D8</button>
+            <button onclick="rollSelectedDice(6)">D6</button>
+        </div>
+
+        <button style="margin-top:25px;" onclick="closeDiceSelector()">Fechar</button>
+    </div>
+
+    <!-- Modal do resultado -->
+    <div id="diceOverlay" class="dice-overlay"></div>
+    <div id="diceResult" class="dice-result">
+        <h3>Resultado</h3>
+        <div id="diceResultValue" class="dice-result-value"></div>
+        <button onclick="closeDiceResult()">Fechar</button>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
