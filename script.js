@@ -8,7 +8,6 @@ var characters = {
 
 // Storage helpers: prefer API /.netlify/functions/characters, fallback to localStorage
 async function storageGet(key) {
-    // key format: 'character_1', 'character_2', etc.
     const match = key.match(/character_(\d+)/);
     if (!match) {
         return { value: localStorage.getItem(key) };
@@ -18,12 +17,10 @@ async function storageGet(key) {
     try {
         const response = await fetch(`/.netlify/functions/characters?char=${encodeURIComponent(charNumber)}`);
         if (!response.ok) {
-            // Fallback to localStorage on API error
             return { value: localStorage.getItem(key) };
         }
         const json = await response.json();
         if (json && json.data) {
-            // Cache in localStorage for offline use
             localStorage.setItem(key, JSON.stringify(json.data));
             return { value: JSON.stringify(json.data) };
         }
@@ -35,7 +32,6 @@ async function storageGet(key) {
 }
 
 async function storageSet(key, value) {
-    // key format: 'character_1', 'character_2', etc.
     const match = key.match(/character_(\d+)/);
     if (!match) {
         localStorage.setItem(key, value);
@@ -45,7 +41,6 @@ async function storageSet(key, value) {
     const charNumber = parseInt(match[1], 10);
     const data = JSON.parse(value);
 
-    // Always cache locally first
     localStorage.setItem(key, value);
 
     try {
@@ -88,9 +83,6 @@ async function loadData() {
 }
 
 function saveField(input) {
-    // Only update local object when a field changes.
-    // Persisting and showing the "salvo" status happens only
-    // when the user clicks the explicit Save button (saveCharacterSheet).
     var charId = input.dataset.char;
     var field = input.dataset.field;
     var value = input.value;
@@ -98,7 +90,6 @@ function saveField(input) {
     if (!characters[charId]) characters[charId] = {};
     characters[charId][field] = value;
 
-    // Mark the form as having unsaved changes (optional visual cue)
     try {
         var btn = document.querySelector('[onclick="saveCharacterSheet(' + charId + ')"]');
         if (btn) btn.classList.add('unsaved');
@@ -180,20 +171,16 @@ function toggleMenu() {
     document.getElementById('sidebar').classList.toggle('open');
 }
 
-// Save entire character sheet at once (called by explicit Save button)
 async function saveCharacterSheet(charId) {
     try {
-        // Collect all form data for this character
         var inputs = document.querySelectorAll('[data-char="' + charId + '"]');
         inputs.forEach(function (input) {
             characters[charId][input.dataset.field] = input.value;
         });
 
-        // Save to storage
         await storageSet('character_' + charId, JSON.stringify(characters[charId]));
         showSaveStatus('Ficha ' + charId + ' salva com sucesso!');
         
-        // Update saved data table
         displaySavedData(charId);
     } catch (error) {
         console.error('Erro ao salvar ficha:', error);
@@ -201,7 +188,6 @@ async function saveCharacterSheet(charId) {
     }
 }
 
-// Display saved character data in a table format
 function displaySavedData(charId) {
     var char = characters[charId];
     var tableId = 'savedDataTable_' + charId;
@@ -222,7 +208,6 @@ function displaySavedData(charId) {
     table.innerHTML = html;
 }
 
-// Update save status message
 function showSaveStatus(message, isError) {
     var status = document.getElementById('saveStatus');
     status.textContent = message || '✓ Salvo!';
@@ -238,12 +223,43 @@ function showSaveStatus(message, isError) {
     }, 3000);
 }
 
+// Função para rolar dados
+function rollDice() {
+    var result = Math.floor(Math.random() * 10) + 1;
+    
+    var overlay = document.getElementById('diceOverlay');
+    var resultDiv = document.getElementById('diceResult');
+    var resultValue = document.getElementById('diceResultValue');
+    
+    resultValue.textContent = result;
+    overlay.classList.add('show');
+    resultDiv.classList.add('show');
+    
+    // Animação do dado girando
+    resultValue.style.animation = 'none';
+    setTimeout(function() {
+        resultValue.style.animation = 'diceRoll 0.5s ease';
+    }, 10);
+}
+
+function closeDiceResult() {
+    var overlay = document.getElementById('diceOverlay');
+    var resultDiv = document.getElementById('diceResult');
+    
+    overlay.classList.remove('show');
+    resultDiv.classList.remove('show');
+}
+
 window.addEventListener('DOMContentLoaded', async function() {
     await loadData();
-    // Render saved data tables for each character
     for (var i = 1; i <= 5; i++) {
         displaySavedData(i);
     }
-    // Garantir que a Visão Geral (aba 6) seja exibida ao abrir o app
     if (typeof switchTab === 'function') switchTab(6);
+    
+    // Event listener para fechar o modal ao clicar no overlay
+    var overlay = document.getElementById('diceOverlay');
+    if (overlay) {
+        overlay.addEventListener('click', closeDiceResult);
+    }
 });

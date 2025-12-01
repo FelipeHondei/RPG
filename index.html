@@ -28,6 +28,7 @@
             <div class="form-section" id="form1">
                 <div class="form-header">
                     <h1>Ficha Prisma</h1>
+                    <button class="dice-button" onclick="rollDice()" title="Rolar D10">🎲</button>
                 </div>
 
                 <div class="form-row">
@@ -289,7 +290,8 @@
                     </div>
                     <div class="form-group">
                         <label>Dano superficial</label>
-                        <input type="number" min="0" max="5" data-char="1" data-field="dano_superficial" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="1" data-field="dano_superficial"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -353,6 +355,7 @@
             <div class="form-section" id="form2">
                 <div class="form-header">
                     <h1>Ficha Cora</h1>
+                    <button class="dice-button" onclick="rollDice()" title="Rolar D10">🎲</button>
                 </div>
 
                 <div class="form-row">
@@ -614,7 +617,8 @@
                     </div>
                     <div class="form-group">
                         <label>Dano superficial</label>
-                        <input type="number" min="0" max="5" data-char="2" data-field="dano_superficial" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="2" data-field="dano_superficial"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -678,6 +682,7 @@
             <div class="form-section" id="form3">
                 <div class="form-header">
                     <h1>Ficha Lu chen</h1>
+                    <button class="dice-button" onclick="rollDice()" title="Rolar D10">🎲</button>
                 </div>
 
                 <div class="form-row">
@@ -939,7 +944,8 @@
                     </div>
                     <div class="form-group">
                         <label>Dano superficial</label>
-                        <input type="number" min="0" max="5" data-char="3" data-field="dano_superficial" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="3" data-field="dano_superficial"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -1003,6 +1009,7 @@
             <div class="form-section" id="form4">
                 <div class="form-header">
                     <h1>Ficha Todi Tooka</h1>
+                    <button class="dice-button" onclick="rollDice()" title="Rolar D10">🎲</button>
                 </div>
 
                 <div class="form-row">
@@ -1264,7 +1271,8 @@
                     </div>
                     <div class="form-group">
                         <label>Dano superficial</label>
-                        <input type="number" min="0" max="5" data-char="4" data-field="dano_superficial" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="4" data-field="dano_superficial"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -1328,6 +1336,7 @@
             <div class="form-section" id="form5">
                 <div class="form-header">
                     <h1>Ficha de Personagem 5</h1>
+                    <button class="dice-button" onclick="rollDice()" title="Rolar D10">🎲</button>
                 </div>
                 <div class="form-row">
                     <div class="form-group">
@@ -1588,7 +1597,8 @@
                     </div>
                     <div class="form-group">
                         <label>Dano superficial</label>
-                        <input type="number" min="0" max="5" data-char="5" data-field="dano_superficial" onchange="saveField(this)">
+                        <input type="number" min="0" max="5" data-char="5" data-field="dano_superficial"
+                            onchange="saveField(this)">
                     </div>
                 </div>
 
@@ -1652,10 +1662,18 @@
             <div class="form-section active" id="form6">
                 <div class="form-header">
                     <h1>Visão Geral - Todas as Fichas</h1>
+                    <button class="dice-button" onclick="rollDice()" title="Rolar D10">🎲</button>
                 </div>
                 <div class="overview-grid" id="overviewGrid"></div>
             </div>
         </main>
+    </div>
+
+    <div class="dice-overlay" id="diceOverlay"></div>
+    <div class="dice-result" id="diceResult">
+        <h3>Resultado da Rolagem</h3>
+        <div class="dice-result-value" id="diceResultValue">10</div>
+        <button onclick="closeDiceResult()">Fechar</button>
     </div>
 
     <script src="script.js"></script>

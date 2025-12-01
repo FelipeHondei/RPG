@@ -1,4 +1,4 @@
- * {
+* {
      margin: 0;
      padding: 0;
      box-sizing: border-box;
@@ -79,6 +79,7 @@
      padding: 30px;
      border-radius: 8px;
      max-width: 1200px;
+     position: relative;
  }
 
  .form-section.active {
@@ -94,6 +95,7 @@
      border-radius: 5px;
      opacity: 0;
      transition: opacity 0.3s;
+     z-index: 999;
  }
 
  .save-status.show {
@@ -104,11 +106,121 @@
      margin-bottom: 30px;
      padding-bottom: 20px;
      border-bottom: 2px solid #8b0000;
+     position: relative;
  }
 
  .form-header h1 {
      color: #8b0000;
      margin-bottom: 10px;
+ }
+
+ /* Botão de Dado */
+ .dice-button {
+     position: absolute;
+     top: 0;
+     right: 0;
+     width: 60px;
+     height: 60px;
+     background: #8b0000;
+     border: 3px solid #ff0000;
+     border-radius: 12px;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 2rem;
+     color: white;
+     transition: all 0.3s ease;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+ }
+
+ .dice-button:hover {
+     background: #b00000;
+     transform: scale(1.1) rotate(10deg);
+     box-shadow: 0 6px 12px rgba(139, 0, 0, 0.6);
+ }
+
+ .dice-button:active {
+     transform: scale(0.95) rotate(-5deg);
+ }
+
+ /* Resultado do Dado */
+ .dice-result {
+     position: fixed;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     background: #2d2d2d;
+     border: 4px solid #8b0000;
+     border-radius: 12px;
+     padding: 30px;
+     z-index: 2000;
+     display: none;
+     min-width: 300px;
+     text-align: center;
+     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+ }
+
+ .dice-result.show {
+     display: block;
+     animation: slideIn 0.3s ease;
+ }
+
+ @keyframes slideIn {
+     from {
+         opacity: 0;
+         transform: translate(-50%, -60%);
+     }
+     to {
+         opacity: 1;
+         transform: translate(-50%, -50%);
+     }
+ }
+
+ .dice-result h3 {
+     color: #8b0000;
+     margin-bottom: 20px;
+     font-size: 1.5rem;
+ }
+
+ .dice-result-value {
+     font-size: 4rem;
+     color: #ff0000;
+     margin: 20px 0;
+     font-weight: bold;
+     text-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+ }
+
+ .dice-result button {
+     padding: 10px 20px;
+     background: #8b0000;
+     color: white;
+     border: none;
+     border-radius: 6px;
+     cursor: pointer;
+     font-size: 1rem;
+     margin-top: 15px;
+     transition: all 0.3s ease;
+ }
+
+ .dice-result button:hover {
+     background: #b00000;
+ }
+
+ /* Overlay para o modal */
+ .dice-overlay {
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     bottom: 0;
+     background: rgba(0, 0, 0, 0.7);
+     z-index: 1999;
+     display: none;
+ }
+
+ .dice-overlay.show {
+     display: block;
  }
 
  .form-row {
@@ -258,6 +370,12 @@
      .form-row {
          grid-template-columns: 1fr;
      }
+
+     .dice-button {
+         width: 50px;
+         height: 50px;
+         font-size: 1.5rem;
+     }
  }
 
  /* Save Button and Data Table Styles */
@@ -320,4 +438,12 @@
 
  .character-data-table tr:hover {
      background: #3a3a3a;
+ }
+
+ /* Animação de rolagem do dado */
+ @keyframes diceRoll {
+     0%, 100% { transform: rotate(0deg) scale(1); }
+     25% { transform: rotate(90deg) scale(1.2); }
+     50% { transform: rotate(180deg) scale(1); }
+     75% { transform: rotate(270deg) scale(1.2); }
  }
