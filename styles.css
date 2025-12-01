@@ -132,6 +132,16 @@
      color: white;
      transition: all 0.3s ease;
      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+     padding: 0;
+     overflow: hidden;
+ }
+
+ /* Se usar imagem no botão */
+ .dice-button img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     pointer-events: none;
  }
 
  .dice-button:hover {
