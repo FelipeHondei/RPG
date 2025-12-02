@@ -6,17 +6,17 @@ var characters = {
     5: {}
 };
 
-// Supabase configuration for realtime
+// Config do supa realtime
 const SUPABASE_URL = 'https://xxrimrlllwlwkzyjrwdq.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4cmltcmxsbHdsd2t6eWpyd2RxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMDc3MjAsImV4cCI6MjA3OTg4MzcyMH0.HMBO-5V-Ef20S8Ae6lMcpaK3yGwRq8LSuAMKboD0xhM';
 
-// Supabase client and channel
+// Supabase client e channel
 let supabaseClient = null;
 let realtimeChannel = null;
 
-// Initialize Supabase Realtime using official client
+// Inicia usando o cliente do supa
 function initializeRealtime() {
-    // Check if supabase library is loaded
+    // Verifica se carregou
     if (typeof supabase === 'undefined') {
         console.error('Supabase library not loaded!');
         return;
@@ -52,7 +52,7 @@ function initializeRealtime() {
         });
 }
 
-// Save dice roll to Supabase
+// Salva o resultado do dado no supa
 async function saveDiceRoll(diceType, result) {
     try {
         const response = await fetch(`${SUPABASE_URL}/rest/v1/dice_rolls`, {
@@ -80,7 +80,7 @@ async function saveDiceRoll(diceType, result) {
     }
 }
 
-// Show dice result from realtime event
+// Mostra o resultado realtime para todos
 function showDiceResultFromRealtime(diceType, result) {
     const overlay = document.getElementById('diceOverlay');
     const resultDiv = document.getElementById('diceResult');
@@ -97,7 +97,7 @@ function showDiceResultFromRealtime(diceType, result) {
         resultValue.style.animation = 'diceRoll 0.5s ease';
     }, 10);
     
-    // Auto-close after 5 seconds
+    // Auto-close (depois de 5 sec)
     setTimeout(() => {
         closeDiceResult();
     }, 5000);
@@ -332,18 +332,18 @@ function closeDiceSelector() {
     document.getElementById("diceSelector").style.display = "none";
 }
 
-// --- Função genérica para rolar qualquer dado ---
+// --- Função para rolar qualquer dado ---
 async function rollSelectedDice(sides) {
-    closeDiceSelector(); // Fecha o seletor de dados
+    closeDiceSelector();
 
     const result = Math.floor(Math.random() * sides) + 1;
     
     try {
-        // Save to Supabase (will trigger realtime event for all users)
+        // salva no supa para mostrar para todos os usuarios
         await saveDiceRoll(sides, result);
     } catch (error) {
         console.error('Error broadcasting dice roll:', error);
-        // Fallback: show result locally if save fails
+        // Fallback
         showDiceResultFromRealtime(sides, result);
     }
 }
@@ -354,7 +354,6 @@ function closeDiceResult() {
     document.getElementById('diceResult').classList.remove('show');
 }
 
-// Permite clicar fora do modal para fechar
 document.getElementById("diceSelectorOverlay").addEventListener("click", closeDiceSelector);
 document.getElementById("diceOverlay").addEventListener("click", closeDiceResult);
 
@@ -366,6 +365,6 @@ window.addEventListener('DOMContentLoaded', async function() {
     }
     if (typeof switchTab === 'function') switchTab(6);
     
-    // Initialize realtime connection
+    // Inicia o realtime (para ver se ta tudo certo, ao clicar F12 na página e olhar console deve aparecer uma mensagem que a conexão deu certo)
     initializeRealtime();
 });
