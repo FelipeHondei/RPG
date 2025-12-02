@@ -10,60 +10,46 @@ var characters = {
 const SUPABASE_URL = 'https://xxrimrlllwlwkzyjrwdq.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inh4cmltcmxsbHdsd2t6eWpyd2RxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjQzMDc3MjAsImV4cCI6MjA3OTg4MzcyMH0.HMBO-5V-Ef20S8Ae6lMcpaK3yGwRq8LSuAMKboD0xhM';
 
-// Realtime subscription
+// Supabase client and channel
+let supabaseClient = null;
 let realtimeChannel = null;
 
-// Initialize Supabase Realtime
+// Initialize Supabase Realtime using official client
 function initializeRealtime() {
-    // Using Supabase Realtime via WebSocket
-    const wsUrl = SUPABASE_URL.replace('https://', 'wss://') + '/realtime/v1/websocket';
+    // Check if supabase library is loaded
+    if (typeof supabase === 'undefined') {
+        console.error('Supabase library not loaded!');
+        return;
+    }
     
-    // Create WebSocket connection
-    const socket = new WebSocket(wsUrl + '?apikey=' + encodeURIComponent(SUPABASE_KEY) + '&vsn=1.0.0');
+    // Create Supabase client
+    supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
     
-    socket.onopen = () => {
-        console.log('Realtime connected');
-        
-        // Join the dice_rolls channel
-        const joinMsg = {
-            topic: 'realtime:public:dice_rolls',
-            event: 'phx_join',
-            payload: {},
-            ref: '1'
-        };
-        socket.send(JSON.stringify(joinMsg));
-        
-        // Send heartbeat every 30 seconds
-        setInterval(() => {
-            socket.send(JSON.stringify({
-                topic: 'phoenix',
-                event: 'heartbeat',
-                payload: {},
-                ref: Date.now().toString()
-            }));
-        }, 30000);
-    };
+    console.log('🎲 Inicializando Realtime...');
     
-    socket.onmessage = (event) => {
-        const data = JSON.parse(event.data);
-        
-        // Handle INSERT events
-        if (data.event === 'INSERT' && data.payload && data.payload.record) {
-            const roll = data.payload.record;
-            showDiceResultFromRealtime(roll.dice_type, roll.result);
-        }
-    };
-    
-    socket.onerror = (error) => {
-        console.error('Realtime error:', error);
-    };
-    
-    socket.onclose = () => {
-        console.log('Realtime disconnected, reconnecting...');
-        setTimeout(initializeRealtime, 3000);
-    };
-    
-    return socket;
+    // Subscribe to INSERT events on dice_rolls table
+    realtimeChannel = supabaseClient
+        .channel('dice-rolls-channel')
+        .on(
+            'postgres_changes',
+            {
+                event: 'INSERT',
+                schema: 'public',
+                table: 'dice_rolls'
+            },
+            (payload) => {
+                console.log('🎲 Novo dado rolado:', payload);
+                const roll = payload.new;
+                showDiceResultFromRealtime(roll.dice_type, roll.result);
+            }
+        )
+        .subscribe((status) => {
+            if (status === 'SUBSCRIBED') {
+                console.log('✅ Realtime conectado com sucesso!');
+            } else {
+                console.log('⏳ Status da conexão:', status);
+            }
+        });
 }
 
 // Save dice roll to Supabase
